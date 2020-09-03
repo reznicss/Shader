@@ -5,17 +5,19 @@
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
+            #include "ss/1.cginc"
 
-            void vert(in float4 objPos:POSITION, out float4 pos:POSITION,out float4 col:COLOR){
+            void vert(in float4 objPos:POSITION, out float4 pos:POSITION){
                 pos = UnityObjectToClipPos(objPos);
+
                 // col = float4(1,0,0,1);
                 // col = float4(0,1,0,1);
+       
             }
 
-            void frag(inout float4 col:COLOR){
+            void frag(inout float4 col:COLOR,in float4 pos:POSITION){
                 // col = float4(1,0,0,1);
                 // col = float4(0,1,0,1);
-                // col = pos;
 
                 // fixed r = 1;
                 // fixed g = 0;
@@ -30,12 +32,22 @@
                 float3 fl3 = float3(1,0,0);
                 float4 fl4 = float4(1,0,0,1);
 
+                //swizzel
                 // float4 f1 = float4(fl2.xy,0,1);
                 // float4 f1 = float4(fl3.rgb,1);
                 // float4 f1 = float4(fl4);
+                //col = f1;
                 float4 f1 = float4(fl3.rgbr);
 
-                col = f1;
+                //用if...else取代switch
+                // if(pos.x < 0){
+                //     col = float4(1,0,0,1);
+                // }else{
+                //     col = float4(0,1,0,1);
+                // }
+                col = float4(1,0,0,1);
+                float arr[] = (0.1,0.1);
+                col.x = Func2(arr) ;
             }
             ENDCG
         }
