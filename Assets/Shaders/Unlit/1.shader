@@ -1,7 +1,7 @@
 ﻿Shader "Unlit/1"
 {
     SubShader{
-        pass{
+        Pass{
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
@@ -46,7 +46,7 @@
                 //     col = float4(0,1,0,1);
                 // }
                 col = float4(1,0,0,1);
-                float arr[] = (0.1,0.1);
+				float arr[] = { 0.5, 0.5 };
                 col.x = Func2(arr) ;
             }
             ENDCG
