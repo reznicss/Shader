@@ -15,7 +15,7 @@ Shader "Unlit/3"
             float4x4 sm;
             struct v2f{
                 float4 pos:POSITION;
-                fixed4 color:COLOR;
+                //fixed4 color:COLOR;
             };
 
             v2f vert(appdata_base v){
