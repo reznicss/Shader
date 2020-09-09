@@ -21,6 +21,8 @@ Shader "Unlit/6"
             };
 
             v2f vert(appdata_base v){
+                // float4 wpos = mul(unity_ObjectToWorld, v.vertex);
+                // float2 xy = wpos.xz;
 
                 float2 xy = v.vertex.xz;
                 float dis = _R - length(xy);
