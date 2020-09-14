@@ -3,6 +3,8 @@
     SubShader{
         Pass{
             CGPROGRAM
+// Upgrade NOTE: excluded shader from DX11, OpenGL ES 2.0 because it uses unsized arrays
+#pragma exclude_renderers d3d11 gles
             #pragma vertex vert
             #pragma fragment frag
             #include "ss/1.cginc"
@@ -46,7 +48,7 @@
                 //     col = float4(0,1,0,1);
                 // }
                 col = float4(1,0,0,1);
-				float arr[] = { 0.5, 0.5 };
+				float[] arr = { 0.5, 0.5 };
                 col.x = Func2(arr) ;
             }
             ENDCG
