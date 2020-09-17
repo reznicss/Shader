@@ -3,9 +3,9 @@
     SubShader{
         Pass{
             CGPROGRAM
-// Upgrade NOTE: excluded shader from DX11, OpenGL ES 2.0 because it uses unsized arrays
-#pragma exclude_renderers d3d11 gles
-// Upgrade NOTE: excluded shader from DX11, OpenGL ES 2.0 because it uses unsized arrays
+            // Upgrade NOTE: excluded shader from DX11, OpenGL ES 2.0 because it uses unsized arrays
+            #pragma exclude_renderers d3d11 gles
+            // Upgrade NOTE: excluded shader from DX11, OpenGL ES 2.0 because it uses unsized arrays
             #pragma vertex vert
             #pragma fragment frag
             #include "ss/1.cginc"
@@ -15,7 +15,7 @@
 
                 // col = float4(1,0,0,1);
                 // col = float4(0,1,0,1);
-       
+                
             }
 
             void frag(inout float4 col:COLOR,in float4 pos:POSITION){
@@ -44,12 +44,12 @@
 
                 //用if...else取代switch
                 // if(pos.x < 0){
-                //     col = float4(1,0,0,1);
-                // }else{
-                //     col = float4(0,1,0,1);
+                    //     col = float4(1,0,0,1);
+                    // }else{
+                    //     col = float4(0,1,0,1);
                 // }
                 col = float4(1,0,0,1);
-				float[] arr = { 0.5, 0.5 };
+                float[] arr = { 0.5, 0.5 };
                 col.x = Func2(arr) ;
             }
             ENDCG
