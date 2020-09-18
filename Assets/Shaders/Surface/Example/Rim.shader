@@ -29,4 +29,5 @@ Shader "Example/Rim"{
         }
         ENDCG
     }
+    Fallback "Diffuse"
 }
