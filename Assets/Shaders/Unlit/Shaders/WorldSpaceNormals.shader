@@ -1,3 +1,4 @@
+//使用网格法线
 Shader "Unlit/WorldSpaceNormals"{
     SubShader{
         Pass{
